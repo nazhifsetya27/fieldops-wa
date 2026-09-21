@@ -1,6 +1,7 @@
 {
   "name": "backend",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "description": "Project pribadi ngoding manual untuk asah kemampuan dan latihan waha, kafka, AI",
   "main": "server.js",

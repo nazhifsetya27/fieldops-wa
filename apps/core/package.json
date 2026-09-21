@@ -1,8 +1,11 @@
 {
   "name": "core",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "description": "Project pribadi ngoding manual untuk asah kemampuan dan latihan waha, kafka, AI",
   "main": "index.js",
-  "dependencies": {}
+  "dependencies": {
+    "kafkajs": "^2.2.4"
+  }
 }

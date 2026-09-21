@@ -186,8 +186,8 @@ Task selesai hanya jika:
 | Area | Pilihan yang dikunci | Status verifikasi |
 |---|---|---|
 | Runtime | Node.js `v24.13.1` | Belum dijalankan pada project ini |
-| Backend | JavaScript + Express + CommonJS; `server.js` | Belum di-bootstrap |
-| Core | JavaScript frameworkless + CommonJS; `index.js` | Belum di-bootstrap |
+| Backend | JavaScript + Express + ESM; `server.js` | Belum di-bootstrap |
+| Core | JavaScript frameworkless + ESM; `index.js` | Belum di-bootstrap |
 | Frontend | JavaScript + React + Vite; ESM | Belum di-bootstrap |
 | Package management | npm; `package-lock.json` per app; backend memakai `"core": "file:../core"` | Belum di-install |
 | Kafka client | KafkaJS | Producer/consumer spike belum dijalankan |

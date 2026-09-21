@@ -1,3 +1,7 @@
+# UNTUK AI AGENT
+
+Jika saya bertanya tentang sesuatu di repo ini, jangan memberikan jawaban utuh, melainkan harus jawaban yang memancing pengetahuan. pertanyaan saya bisa jadi hal yang sangat basic. harus dijawab dengan jawaban yang memancing pemahaman sehingga bisa menempel permanen.
+
 # FieldOps WA
 
 FieldOps WA adalah project belajar manual untuk membangun **AI operations desk berbasis WhatsApp** bagi perusahaan maintenance multi-site.
@@ -114,28 +118,28 @@ fieldops-wa/
 
 ### Aturan ownership
 
-| Folder | Memiliki | Tidak boleh |
-|---|---|---|
-| `apps/backend` | HTTP API, process entrypoints, Kafka consumers/producers, WA gateway/sender, workers | Mendefinisikan ulang domain atau event schema milik core |
-| `apps/core` | Domain rules, contracts, persistence, migrations, adapters, knowledge retrieval, fixtures | Membuka port atau menjadi long-running process |
-| `apps/frontend` | Dispatcher board, evidence review, approval, lag, AI runs, DLQ, learning lab | Mengakses Kafka, database, WAHA, atau AI provider secara langsung |
-| Root | Compose, docs, repository metadata, thin orchestration | Menyimpan business logic, migration, fixture, atau source code aplikasi |
+| Folder          | Memiliki                                                                                  | Tidak boleh                                                             |
+| --------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `apps/backend`  | HTTP API, process entrypoints, Kafka consumers/producers, WA gateway/sender, workers      | Mendefinisikan ulang domain atau event schema milik core                |
+| `apps/core`     | Domain rules, contracts, persistence, migrations, adapters, knowledge retrieval, fixtures | Membuka port atau menjadi long-running process                          |
+| `apps/frontend` | Dispatcher board, evidence review, approval, lag, AI runs, DLQ, learning lab              | Mengakses Kafka, database, WAHA, atau AI provider secara langsung       |
+| Root            | Compose, docs, repository metadata, thin orchestration                                    | Menyimpan business logic, migration, fixture, atau source code aplikasi |
 
 Jika code digunakan bersama, code tersebut masuk `apps/core`; jangan membuat sibling `packages/`, `workers/`, atau `scripts/` di root.
 
 ## Stack yang dikunci
 
-| Area | Keputusan |
-|---|---|
-| Runtime | Node.js `v24.13.1` |
-| Backend | JavaScript, Express, CommonJS, entry point `server.js` |
-| Core | JavaScript, frameworkless, CommonJS, entry point `index.js` |
-| Frontend | JavaScript, React + Vite, ESM bawaan Vite |
-| Package manager | npm dengan `package-lock.json` per app |
-| Dependency internal | `apps/backend` memakai `"core": "file:../core"` |
-| Kafka client | KafkaJS |
+| Area                | Keputusan                                                                                         |
+| ------------------- | ------------------------------------------------------------------------------------------------- |
+| Runtime             | Node.js `v24.13.1`                                                                                |
+| Backend             | JavaScript, Express, ESM, entry point `server.js`                                                 |
+| Core                | JavaScript, frameworkless, ESM, entry point `index.js`                                            |
+| Frontend            | JavaScript, React + Vite, ESM bawaan Vite                                                         |
+| Package manager     | npm dengan `package-lock.json` per app                                                            |
+| Dependency internal | `apps/backend` memakai `"core": "file:../core"`                                                   |
+| Kafka client        | KafkaJS                                                                                           |
 | Development command | `node --env-file=.env --watch server.js` untuk backend; pola setara untuk process entrypoint lain |
-| Test runner | Built-in `node:test` |
+| Test runner         | Built-in `node:test`                                                                              |
 
 Pilihan stack sudah dikunci, tetapi S0-01 belum selesai sampai producer/consumer KafkaJS dibuktikan dapat connect, melakukan manual offset commit, menangani error, dan shutdown dengan bersih pada Node.js `v24.13.1`.
 
@@ -203,16 +207,16 @@ Demo MVP menggunakan vendor maintenance cabang bank dengan data sintetis:
 
 ## Status
 
-| Area | Status |
-|---|---|
-| Product dan architecture blueprint | Selesai, v0.4.0 |
-| Folder boundaries | Dikunci |
-| Sprint delivery plan | Usulan, 12 sprint (21 Sep–13 Des 2026) |
-| Backend | Belum dimulai |
-| Core | Belum dimulai |
-| Frontend | Belum dimulai |
-| Local infrastructure | Belum dikonfigurasi |
-| End-to-end demo | Belum tersedia |
+| Area                               | Status                                 |
+| ---------------------------------- | -------------------------------------- |
+| Product dan architecture blueprint | Selesai, v0.4.0                        |
+| Folder boundaries                  | Dikunci                                |
+| Sprint delivery plan               | Usulan, 12 sprint (21 Sep–13 Des 2026) |
+| Backend                            | Belum dimulai                          |
+| Core                               | Belum dimulai                          |
+| Frontend                           | Belum dimulai                          |
+| Local infrastructure               | Belum dikonfigurasi                    |
+| End-to-end demo                    | Belum tersedia                         |
 
 ## Dokumentasi
 

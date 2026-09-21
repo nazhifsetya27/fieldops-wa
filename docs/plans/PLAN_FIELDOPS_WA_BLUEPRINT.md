@@ -100,7 +100,7 @@ Alternatif yang ditolak:
 
 Parameter awal yang masih harus dibuktikan lewat spike:
 
-- Node.js `v24.13.1`, JavaScript, CommonJS untuk backend/core, npm, dan KafkaJS; pilihan sudah dikunci tetapi producer/consumer belum diverifikasi.
+- Node.js `v24.13.1`, JavaScript, ESM untuk backend/core, npm, dan KafkaJS; pilihan sudah dikunci tetapi producer/consumer belum diverifikasi.
 - Kafka distribution lokal dan partition count.
 - AI provider/model serta batas token, timeout, dan rate limit.
 - WAHA edition/version dan media contract.
@@ -132,7 +132,7 @@ Tidak ada sibling `packages/`, `workers/`, `scripts/`, atau source-code folder l
 - [x] Menambahkan incident intelligence, asset-aware diagnosis, dispatch assistance, dan closeout quality.
 - [x] Mengunci struktur apps-only dan memperbarui blueprint ke v0.3.0.
 - [x] Membuat root `README.md` sebagai pintu masuk project.
-- [x] Mengunci stack awal: Node.js `v24.13.1`, JavaScript, Express, core frameworkless, React + Vite, CommonJS backend/core, npm, KafkaJS, dan `node:test`.
+- [x] Mengunci stack awal: Node.js `v24.13.1`, JavaScript, Express, core frameworkless, React + Vite, ESM backend/core, npm, KafkaJS, dan `node:test`.
 - [ ] Menambahkan observed evidence ketika setiap spike atau fase benar-benar dijalankan.
 
 ### Implementasi
