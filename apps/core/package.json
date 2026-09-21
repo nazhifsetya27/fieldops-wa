@@ -1,0 +1,8 @@
+{
+  "name": "core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Project pribadi ngoding manual untuk asah kemampuan dan latihan waha, kafka, AI",
+  "main": "index.js",
+  "dependencies": {}
+}
